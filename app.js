@@ -1,81 +1,61 @@
+var button = document.getElementsByClassName("fa");
+var audio = document.getElementsByTagName("audio");
+var section = document.getElementsByTagName("section");
+var header = document.getElementById("header");
+var span = document.getElementsByTagName("span");
 
-var sound1 = document.getElementById("sound1");
-var sound2 = document.getElementById("sound2");
-var sound3 = document.getElementById("sound3");
-var sound4 = document.getElementById("sound4");
-
-var changeButtons = function() {
-  event.target.classList.remove("fa-play");
-  event.target.classList.add("fa-stop");
-}
-
-var changeButtonsBack = function() {
-  event.target.classList.remove("fa-stop");
-  event.target.classList.add("fa-play");
-}
-
-var changeHeader = function() {
-  header.classList.remove("Now Playing: Favorite Food by Tokyo Police Club");
-  header.classList.add("Select a song!");
-}
-
-var changeHeaderBack = function() {
-    header.classList.remove("Select a song!");
-    header.classList.add("Now Playing: Favorite Food by Tokyo Police Club");
+var stopMusic = function(){
+  for (i=0; i< audio.length; i++) {
+    audio[i].pause();
+    button[i].className = "fa fa-play";
+    header.innerHTML = "Select a song!";
   }
+};
 
-}
-// ------------------- Button 1 ------------------ //
-
-button1.addEventListener('click', function(){
-  if (sound1.paused) {
-    sound1.play();
-    changeButtons();
-    changeHeader();
+button[0].addEventListener("click", function(){
+  if (button[0].className === "fa fa-play") {
+    stopMusic();
+    audio[0].play();
+    button[0].className = "fa fa-stop";
+    header.innerHTML = "<em>" + "Now Playing: " + "</em>" + span[0].innerHTML;
   }
-
   else {
-    sound1.pause();
-    changeButtonsBack();
-    changeHeaderBack();
+    stopMusic();
   }
 });
 
-// ------------------- Button 2 ------------------ //
-button2.addEventListener('click',function(){
-  if (sound2.paused) {
-    sound2.play();
-    changeButtons();
+button[1].addEventListener("click", function(){
+  if (button[1].className === "fa fa-play") {
+    stopMusic();
+    audio[1].play();
+    button[1].className = "fa fa-stop";
+    header.innerHTML = "<em>" + "Now Playing: " + "</em>" + span[1].innerHTML;
   }
-
   else {
-    sound2.pause();
-    changeButtonsBack();
+    stopMusic();
   }
 });
 
-// ------------------- Button 3 ------------------ //
-button3.addEventListener('click',function(){
-  if (sound3.paused) {
-    sound3.play();
-    changeButtons();
+button[2].addEventListener("click", function(){
+  if (button[2].className === "fa fa-play") {
+    stopMusic();
+    audio[2].play();
+    button[2].className = "fa fa-stop";
+    header.innerHTML = "<em>" + "Now Playing: " + "</em>" + span[2].innerHTML;
   }
-
   else {
-    sound3.pause();
-    changeButtonsBack();
+    stopMusic();
   }
 });
 
-// ------------------- Button 4 ------------------ //
-button4.addEventListener('click',function(){
-  if (sound4.paused) {
-    sound4.play();
-    changeButtons();
+button[3].addEventListener("click", function(){
+  if (button[3].className === "fa fa-play") {
+    stopMusic();
+    audio[3].play();
+    button[3].className = "fa fa-stop";
+    header.innerHTML = "<em>" + "Now Playing: " + "</em>" + span[3].innerHTML;
   }
-
   else {
-    sound4.pause();
-    changeButtonsBack();
+    stopMusic();
   }
 });
